@@ -1,4 +1,4 @@
-// Обратный отсчёт
+// Обратный отсчет
 const weddingDate = new Date("2025-09-20T16:20:00").getTime();
 
 function updateCountdown() {
@@ -31,7 +31,7 @@ document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   const formData = new FormData(this);
   const data = Object.fromEntries(formData);
 
-  fetch('https://script.google.com/macros/s/ ВАШ_ID/exec', { // ← замени на URL из Google Apps Script
+  fetch(' https://script.google.com/macros/s/ ВАШ_ID/exec', { // замени на URL из Apps Script
     method: 'POST',
     mode: 'no-cors',
     headers: {
