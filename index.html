@@ -2,168 +2,94 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Сергей и Анна — Свадьба</title>
-  <style>
-    /* Сброс и общие стили */
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; background:#fff; color:#333; line-height:1.5; }
-    .container { max-width:600px; margin:0 auto; padding:20px; }
-    img { display:block; width:100%; height:auto; border-radius:8px; }
-    h1, h2 { text-align:center; color:#222; margin:20px 0; }
-    p { margin:10px 0; }
-    .section { margin:30px 0; }
-
-    /* Стиль кнопок и форм */
-    form label { font-weight:600; margin-top:15px; display:block; }
-    form input, form select, form textarea, form button {
-      width:100%;
-      padding:12px;
-      margin-top:6px;
-      border:1px solid #ccc;
-      border-radius:4px;
-      font-size:1rem;
-    }
-    form button {
-      background:#007BFF;
-      color:#fff;
-      border:none;
-      cursor:pointer;
-      margin-top:20px;
-      font-size:1.1rem;
-    }
-    form button:hover { background:#0056b3; }
-
-    /* Особенности для секций */
-    .calendar img { max-height:300px; object-fit:cover; }
-    .dress img, .gift img { margin-top:10px; }
-
-    /* Таймер */
-    .countdown { font-size:2rem; font-weight:600; text-align:center; margin:20px 0; }
-
-    /* Адаптив */
-    max-width:400px {
-      form input, form select, form textarea, form button {
-        font-size:0.9rem;
-        padding:10px;
-      }
-      .countdown { font-size:1.5rem; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Свадьба Сергея и Анны</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <!-- Фото -->
-    <img src="hero.jpg" alt="Сергей и Анна" class="hero">
 
-    <h1>Сергей и Анна</h1>
-    <p>Дорогие гости! Приглашаем Вас разделить с нами радость особенного события и стать частью нашей семейной истории!</p>
+  <!-- Главное фото -->
+  <div class="hero">
+    <img src="photo.jpg" alt="Сергей и Анна" />
+  </div>
 
-    <!-- Календарь -->
-    <div class="section calendar">
-      <img src="calendar.png" alt="20 сентября 2025">
-    </div>
+  <!-- Заголовок -->
+  <div class="section">
+    <h1>Сергей & Анна</h1>
+    <p>Дорогие гости!</p>
+    <p>Приглашаем Вас разделить с нами радость особенного события и стать частью нашей семейной истории!</p>
+  </div>
 
-    <!-- Место -->
-    <div class="section">
-      <h2>Место торжества</h2>
-      <p>Ресторан «Васпуракан». Станица Константиновская, ул. Ленина 1</p>
-    </div>
-
-    <!-- Программа -->
-    <div class="section program">
-      <h2>Программа дня</h2>
-      <p>16:20 — ЦЕРЕМОНИЯ – по адресу: город Пятигорск, ул. Братьев Бернардацци 5</p>
-      <p>18:00 — БАНКЕТ – время вкусной еды, танцев и развлечений!</p>
-      <p>23:00 — ОКОНЧАНИЕ ВЕЧЕРА – К сожалению, даже такой прекрасный вечер может закончиться</p>
-    </div>
-
-    <!-- Дресс-код -->
-    <div class="section dress">
-      <h2>Дресс‑код</h2>
-      <p>Для дам — вечерние и коктейльные платья, для джентльменов — костюм.</p>
-      <img src="dress.jpg" alt="Образ платья">
-      <img src="suit.jpg" alt="Образ костюма">
-    </div>
-
-    <!-- Детали -->
-    <div class="section gift">
-      <h2>Детали</h2>
-      <p>Главное для нас — Ваше внимание. Пожелания в конверте станут лучшим подарком. Вместо цветов — бутылочку любимого напитка, и мы обязательно откроем её у нас дома!</p>
-      <img src="wine.jpg" alt="бутылка напитка">
-    </div>
-
-    <!-- Таймер -->
-    <div class="section">
-      <h2>До свадьбы осталось:</h2>
-      <div id="timer" class="countdown">—</div>
-    </div>
-
-    <!-- Анкета и опрос -->
-    <div class="section rsvp">
-      <h2>Анкета гостя</h2>
-      <form id="rsvpForm">
-        <label for="name">ФИО гостя</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="phone">Номер телефона</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="attendance">Планируете ли Вы присутствовать?</label>
-        <select id="attendance" name="attendance" required>
-          <option value="">— Выберите —</option>
-          <option value="Да">Обязательно приду!</option>
-          <option value="Нет">К сожалению, не смогу прийти</option>
-        </select>
-
-        <label for="notes">Дополнительные пожелания</label>
-        <textarea id="notes" name="notes" rows="3"></textarea>
-
-        <button type="submit">Отправить</button>
-      </form>
-      <p style="text
-
-
-align:center; margin-top:10px;">Пожалуйста, подтвердите своё присутствие до <strong>01.09.2025</strong></p>
+  <!-- Обратный отсчет -->
+  <div class="timer section">
+    <h2>Свадьба состоится:</h2>
+    <p><strong>20 сентября 2025 года</strong></p>
+    <h3>Осталось:</h3>
+    <div id="countdown">
+      <span><b id="days">0</b> дней</span>
+      <span><b id="hours">0</b> часов</span>
+      <span><b id="minutes">0</b> минут</span>
+      <span><b id="seconds">0</b> секунд</span>
     </div>
   </div>
 
-  <script>
-    // Таймер обратного отсчёта
-    (function(){
-      const timerEl = document.getElementById('timer');
-      const eventDate = new Date('2025-09-20T00:00:00');
-      function update() {
-        const now = new Date();
-        const diff = eventDate - now;
-        if (diff <= 0) {
-          timerEl.textContent = 'Событие уже прошло!';
-          clearInterval(interval);
-          return;
-        }
-        const d = Math.floor(diff / (1000*60*60*24));
-        const h = Math.floor((diff / (1000*60*60)) % 24);
-        const m = Math.floor((diff / (1000*60)) % 60);
-        const s = Math.floor((diff / 1000) % 60);
-        timerEl.textContent = `${d} дн ${h} ч ${m} мин ${s} сек`;
-      }
-      update();
-      const interval = setInterval(update, 1000);
-    })();
+  <!-- Программа дня -->
+  <div class="section">
+    <h2>Программа дня</h2>
+    <p>🕓 16:20 — ЦЕРЕМОНИЯ
 
-    // Отправка данных в Google Sheets
-    (function(){
-      const form = document.getElementById('rsvpForm');
-      const scriptURL = 'https://script.google.com/macros/s/ВАШ_ID_СКРИПТА/exec';
-      form.addEventListener('submit', e => {
-        e.preventDefault();
-        const data = new FormData(form);
-        fetch(scriptURL, { method: 'POST', body: data })
-          .then(()=> alert('Спасибо! Ваш ответ сохранён.'))
-          .catch(()=> alert('Ошибка отправки. Попробуйте позже.'));
-        form.reset();
-      });
-    })();
-  </script>
+       📍 г. Пятигорск, ул. Братьев Бернардацци, д. 5</p>
+    <p>🕓 18:00 — БАНКЕТ
+
+       📍 Ресторан «Васпуракан»
+
+       ст. Константиновская, ул. Ленина, д. 1</p>
+    <p>🕓 23:00 — Окончание вечера</p>
+  </div>
+
+  <!-- Дресс-код -->
+  <div class="section">
+    <h2>Дресс-код</h2>
+    <p>Мы старались сделать мероприятие красивым и будем рады, если свой выбор остановите на вечерних нарядах.</p>
+    <p>Для дам просим выбрать вечерние и коктейльные платья, для джентельменов уместным будет костюм в любом стиле.</p>
+    <div class="images">
+      <img src="dress-woman.png" alt="Женское платье" />
+      <img src="dress-man.png" alt="Мужской костюм" />
+    </div>
+  </div>
+
+  <!-- Подарки -->
+  <div class="section">
+    <h2>Подарки</h2>
+    <p>Главное для нас — Ваше внимание, а пожелания в конверте будут лучшим подарком, который поможет исполнить наши мечты.</p>
+    <p>Если вы захотите прийти не с пустыми руками — подарите нам бутылочку любимого напитка вместо цветов.</p>
+    <p>Откроем её однажды за уютным ужином уже у нас в гостях.</p>
+    <div class="images">
+      <img src="gift-bottle.png" alt="Бутылка" />
+    </div>
+  </div>
+
+  <!-- Форма RSVP -->
+  <div class="section">
+    <h2>Подтвердите участие</h2>
+    <form id="rsvpForm">
+      <input type="text" name="name" placeholder="ФИО гостя" required />
+      <input type="tel" name="phone" placeholder="Номер телефона" required />
+      <select name="attending" required>
+        <option value="">Придёте ли вы?</option>
+        <option value="yes">Обязательно приду!</option>
+        <option value="no">К сожалению, не смогу прийти</option>
+      </select>
+      <textarea name="wishes" placeholder="Дополнительные пожелания"></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+    <p id="thankYouMessage">Спасибо за ответ!</p>
+  </div>
+
+  <footer>
+    <p>© 2025 Сергей & Анна</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-</html>-
+</html>
