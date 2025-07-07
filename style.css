@@ -5,30 +5,74 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fffdf9;
-  color: #333;
-  line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fdf9f2;
+  color: #443322;
+  line-height: 1.8;
   text-align: center;
   padding: 20px;
 }
 
+/* Большое фото */
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
 .hero img {
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   height: auto;
   border-radius: 10px;
-  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  z-index: 2;
+}
+
+.overlay-text h3 {
+  font-size: 1.2em;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.overlay-text h2 {
+  font-size: 1.8em;
+  font-family: 'Cormorant Garamond', serif;
+  margin: 10px 0;
+}
+
+.overlay-text p {
+  font-size: 1em;
+  font-style: italic;
 }
 
 .section {
   max-width: 600px;
   margin: auto;
-  padding: 20px;
-  background-color: #fff;
+  padding: 25px;
+  background-color: #fff8f0;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  transition: all 0.3s ease;
+}
+
+.section h1, .section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #332211;
+  margin-bottom: 15px;
 }
 
 .timer {
@@ -43,11 +87,12 @@ body {
 
 #countdown span {
   flex: 1;
+  margin: 0 5px;
 }
 
 button {
-  background-color: #ffb6c1;
-  color: white;
+  background-color: #c4a484;
+  color: #fff;
   border: none;
   padding: 12px;
   width: 100%;
@@ -55,10 +100,11 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #ff69b4;
+  background-color: #a6886e;
 }
 
 input, select, textarea {
@@ -68,6 +114,7 @@ input, select, textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .images {
@@ -88,11 +135,51 @@ input, select, textarea {
   color: green;
 }
 
+.button-map {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #e0c9a6;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.95em;
+}
+
+.icon {
+  width: 50px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.decoration-line {
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #a6886e, transparent);
+  margin: 40px auto;
+  max-width: 400px;
+}
+
+footer {
+  font-size: 0.9em;
+  color: #aaa;
+}
+
 max-width: 600px {
+  .overlay-text {
+    bottom: 10px;
+    font-size: 0.9em;
+  }
+
+  .overlay-text h2 {
+    font-size: 1.2em;
+  }
+
   .images {
     flex-direction: column;
     align-items: center;
   }
+
   .images img {
     width: 100%;
     max-width: 300px;
