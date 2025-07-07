@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Сергей и Анна — Свадьба</title>
+  <style>
+    /* Сброс и общие стили */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Helvetica Neue', Arial, sans-serif; background:#fff; color:#333; line-height:1.5; }
+    .container { max-width:600px; margin:0 auto; padding:20px; }
+    img { display:block; width:100%; height:auto; border-radius:8px; }
+    h1, h2 { text-align:center; color:#222; margin:20px 0; }
+    p { margin:10px 0; }
+    .section { margin:30px 0; }
+
+    /* Стиль кнопок и форм */
+    form label { font-weight:600; margin-top:15px; display:block; }
+    form input, form select, form textarea, form button {
+      width:100%;
+      padding:12px;
+      margin-top:6px;
+      border:1px solid #ccc;
+      border-radius:4px;
+      font-size:1rem;
+    }
+    form button {
+      background:#007BFF;
+      color:#fff;
+      border:none;
+      cursor:pointer;
+      margin-top:20px;
+      font-size:1.1rem;
+    }
+    form button:hover { background:#0056b3; }
+
+    /* Особенности для секций */
+    .calendar img { max-height:300px; object-fit:cover; }
+    .dress img, .gift img { margin-top:10px; }
+
+    /* Таймер */
+    .countdown { font-size:2rem; font-weight:600; text-align:center; margin:20px 0; }
+
+    /* Адаптив */
+    max-width:400px {
+      form input, form select, form textarea, form button {
+        font-size:0.9rem;
+        padding:10px;
+      }
+      .countdown { font-size:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Фото -->
+    <img src="hero.jpg" alt="Сергей и Анна" class="hero">
+
+    <h1>Сергей и Анна</h1>
+    <p>Дорогие гости! Приглашаем Вас разделить с нами радость особенного события и стать частью нашей семейной истории!</p>
+
+    <!-- Календарь -->
+    <div class="section calendar">
+      <img src="calendar.png" alt="20 сентября 2025">
+    </div>
+
+    <!-- Место -->
+    <div class="section">
+      <h2>Место торжества</h2>
+      <p>Ресторан «Васпуракан». Станица Константиновская, ул. Ленина 1</p>
+    </div>
+
+    <!-- Программа -->
+    <div class="section program">
+      <h2>Программа дня</h2>
+      <p>16:20 — ЦЕРЕМОНИЯ – по адресу: город Пятигорск, ул. Братьев Бернардацци 5</p>
+      <p>18:00 — БАНКЕТ – время вкусной еды, танцев и развлечений!</p>
+      <p>23:00 — ОКОНЧАНИЕ ВЕЧЕРА – К сожалению, даже такой прекрасный вечер может закончиться</p>
+    </div>
+
+    <!-- Дресс-код -->
+    <div class="section dress">
+      <h2>Дресс‑код</h2>
+      <p>Для дам — вечерние и коктейльные платья, для джентльменов — костюм.</p>
+      <img src="dress.jpg" alt="Образ платья">
+      <img src="suit.jpg" alt="Образ костюма">
+    </div>
+
+    <!-- Детали -->
+    <div class="section gift">
+      <h2>Детали</h2>
+      <p>Главное для нас — Ваше внимание. Пожелания в конверте станут лучшим подарком. Вместо цветов — бутылочку любимого напитка, и мы обязательно откроем её у нас дома!</p>
+      <img src="wine.jpg" alt="бутылка напитка">
+    </div>
+
+    <!-- Таймер -->
+    <div class="section">
+      <h2>До свадьбы осталось:</h2>
+      <div id="timer" class="countdown">—</div>
+    </div>
+
+    <!-- Анкета и опрос -->
+    <div class="section rsvp">
+      <h2>Анкета гостя</h2>
+      <form id="rsvpForm">
+        <label for="name">ФИО гостя</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Номер телефона</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="attendance">Планируете ли Вы присутствовать?</label>
+        <select id="attendance" name="attendance" required>
+          <option value="">— Выберите —</option>
+          <option value="Да">Обязательно приду!</option>
+          <option value="Нет">К сожалению, не смогу прийти</option>
+        </select>
+
+        <label for="notes">Дополнительные пожелания</label>
+        <textarea id="notes" name="notes" rows="3"></textarea>
+
+        <button type="submit">Отправить</button>
+      </form>
+      <p style="text
+
+
+align:center; margin-top:10px;">Пожалуйста, подтвердите своё присутствие до <strong>01.09.2025</strong></p>
+    </div>
+  </div>
+
+  <script>
+    // Таймер обратного отсчёта
+    (function(){
+      const timerEl = document.getElementById('timer');
+      const eventDate = new Date('2025-09-20T00:00:00');
+      function update() {
+        const now = new Date();
+        const diff = eventDate - now;
+        if (diff <= 0) {
+          timerEl.textContent = 'Событие уже прошло!';
+          clearInterval(interval);
+          return;
+        }
+        const d = Math.floor(diff / (1000*60*60*24));
+        const h = Math.floor((diff / (1000*60*60)) % 24);
+        const m = Math.floor((diff / (1000*60)) % 60);
+        const s = Math.floor((diff / 1000) % 60);
+        timerEl.textContent = `${d} дн ${h} ч ${m} мин ${s} сек`;
+      }
+      update();
+      const interval = setInterval(update, 1000);
+    })();
+
+    // Отправка данных в Google Sheets
+    (function(){
+      const form = document.getElementById('rsvpForm');
+      const scriptURL = 'https://script.google.com/macros/s/ВАШ_ID_СКРИПТА/exec';
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const data = new FormData(form);
+        fetch(scriptURL, { method: 'POST', body: data })
+          .then(()=> alert('Спасибо! Ваш ответ сохранён.'))
+          .catch(()=> alert('Ошибка отправки. Попробуйте позже.'));
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>-
