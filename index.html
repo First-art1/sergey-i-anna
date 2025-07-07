@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Свадьба Сергея и Анны</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,6 +12,11 @@
   <!-- Главное фото -->
   <div class="hero">
     <img src="photo.jpg" alt="Сергей и Анна" />
+    <div class="overlay-text">
+      <h3>Wedding day</h3>
+      <h2>Сергей & Анна</h2>
+      <p>20 сентября 2025 года</p>
+    </div>
   </div>
 
   <!-- Заголовок -->
@@ -19,6 +25,8 @@
     <p>Дорогие гости!</p>
     <p>Приглашаем Вас разделить с нами радость особенного события и стать частью нашей семейной истории!</p>
   </div>
+
+  <hr class="decoration-line" />
 
   <!-- Обратный отсчет -->
   <div class="timer section">
@@ -33,19 +41,24 @@
     </div>
   </div>
 
+  <hr class="decoration-line" />
+
   <!-- Программа дня -->
   <div class="section">
+    <img src="calendar.png" alt="Календарь" class="icon" />
     <h2>Программа дня</h2>
     <p>🕓 16:20 — ЦЕРЕМОНИЯ
 
-       📍 г. Пятигорск, ул. Братьев Бернардацци, д. 5</p>
+       г. Пятигорск, ул. Братьев Бернардацци, д. 5</p>
     <p>🕓 18:00 — БАНКЕТ
 
-       📍 Ресторан «Васпуракан»
+       Ресторан «Васпуракан»
 
        ст. Константиновская, ул. Ленина, д. 1</p>
-    <p>🕓 23:00 — Окончание вечера</p>
+    <a href="#map" class="button-map">📍 Посмотреть карту</a>
   </div>
+
+  <hr class="decoration-line" />
 
   <!-- Дресс-код -->
   <div class="section">
@@ -58,6 +71,8 @@
     </div>
   </div>
 
+  <hr class="decoration-line" />
+
   <!-- Подарки -->
   <div class="section">
     <h2>Подарки</h2>
@@ -68,6 +83,8 @@
       <img src="gift-bottle.png" alt="Бутылка" />
     </div>
   </div>
+
+  <hr class="decoration-line" />
 
   <!-- Форма RSVP -->
   <div class="section">
@@ -84,6 +101,19 @@
       <button type="submit">Отправить</button>
     </form>
     <p id="thankYouMessage">Спасибо за ответ!</p>
+  </div>
+
+  <!-- Конец -->
+  <div class="section">
+    <h2>Будем рады видеть вас на нашем празднике!</h2>
+    <p>С & А</p>
+  </div>
+
+  <!-- Карта -->
+  <div id="map" class="section">
+    <iframe 
+      src=" https://maps.app.goo.gl/VPbiRyoeXkXyCq8MA..."
+      width="100%" height="250" style="border:0;" allowfullscreen loading="lazy"></iframe>
   </div>
 
   <footer>
